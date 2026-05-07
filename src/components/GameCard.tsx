@@ -21,6 +21,8 @@ interface GameCardProps {
     time?: string;
     outs?: number;
     battingTeamId?: number;
+    awayPitcher?: string;
+    homePitcher?: string;
     runners?: {
         first: boolean;
         second: boolean;
@@ -48,7 +50,7 @@ function Bases({ runners }: { runners?: { first: boolean; second: boolean; third
     );
 }
 
-function GameCard({ gameId, homeTeam, awayTeam, status, inning, time, outs, battingTeamId, runners }: GameCardProps) {
+function GameCard({ gameId, homeTeam, awayTeam, status, inning, time, outs, battingTeamId, runners, awayPitcher, homePitcher }: GameCardProps) {
     const navigate = useNavigate();
 
     const isFinal = status === 'Final' || status === 'Game Over' || status === 'Completed Early' || status === 'Completed';
@@ -154,6 +156,14 @@ function GameCard({ gameId, homeTeam, awayTeam, status, inning, time, outs, batt
                         </div>
                     )}
                 </div>
+
+                { /* Probable pitcher */ }
+                {!isFinal && (awayPitcher || homePitcher) && (
+                    <div className="text-[#5a5a5a] text-[10px] -mt-2">
+                        SP: {awayPitcher ?? 'TBD'} vs {homePitcher ?? 'TBD'}
+                    </div>
+                )}
+
             </div>
 
             {/* Right of card column */}

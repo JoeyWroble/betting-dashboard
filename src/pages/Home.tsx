@@ -68,6 +68,8 @@ function Home() {
                 score: game.teams.away.score,
                 record: game.teams.away.leagueRecord,
               }}
+              awayPitcher={game.probablePitcher?.away?.fullName ?? game.teams.away.probablePitcher?.lastName}
+              homePitcher={game.probablePitcher?.home?.fullName ?? game.teams.home.probablePitcher?.lastName}
               status={game.status.detailedState}
               inning={
                 game.linescore?.currentInning

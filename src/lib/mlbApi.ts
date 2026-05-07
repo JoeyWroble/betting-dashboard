@@ -9,7 +9,7 @@ export async function getTodaysGames() {
         params: {
             sportId: 1,
             date: today,
-            hydrate: 'team,linescore,flags,liveLookin',
+            hydrate: 'team,linescore,flags,liveLookin,probablePitcher,person',
         },
     });
 

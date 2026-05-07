@@ -17,7 +17,7 @@ function NavBar() {
         }
       >
         <HomeIcon className="w-5 h-5" />
-        <span>Scores</span>
+        <span>Home</span>
       </NavLink>
 
       <NavLink

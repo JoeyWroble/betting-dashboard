@@ -17,3 +17,8 @@ export async function getTodaysGames() {
     if (!dates || dates.length === 0) return [];
     return dates[0].games;
 }
+
+export async function getGameById(gameId: string) {
+    const response = await axios.get(`${BASE_URL}.1/game/${gameId}/feed/live`);
+    return response.data;
+}

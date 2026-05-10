@@ -107,9 +107,9 @@ function GameCard({ gameId, homeTeam, awayTeam, status, inning, time, outs, batt
 
                     {!isUpcoming && (
                         <div className="relative w-8 text-right">
-                            <span className={`text-sm font-semibold ${isFinal && awayTeam.score! > homeTeam.score!
+                            <span className={`text-lg font-bold ${isFinal && awayTeam.score! > homeTeam.score!
                                     ? 'text-[#f5f5f5]'
-                                    : 'text-[#555555]'}`}>
+                                    : 'text-[#666666]'}`}>
                                 {awayTeam.score ?? '-'}
                             </span>
                             {isLive && !isFinal && battingTeamId === awayTeam.id && (
@@ -145,9 +145,9 @@ function GameCard({ gameId, homeTeam, awayTeam, status, inning, time, outs, batt
 
                     {!isUpcoming && (
                         <div className="relative w-8 text-right">
-                            <span className={`text-sm font-semibold ${isFinal && homeTeam.score! > awayTeam.score!
+                            <span className={`text-lg font-bold ${isFinal && homeTeam.score! > awayTeam.score!
                                     ? 'text-[#f5f5f5]'
-                                    : 'text-[#555555]'
+                                    : 'text-[#666666]'
                                 }`}>
                                 {homeTeam.score ?? '-'}
                             </span>
@@ -157,7 +157,7 @@ function GameCard({ gameId, homeTeam, awayTeam, status, inning, time, outs, batt
                     )}
                 </div>
 
-                { /* Probable pitcher */ }
+                { /* Pitcher */ }
                 {!isFinal && (awayPitcher || homePitcher) && (
                     <div className="text-[#5a5a5a] text-[10px] -mt-2">
                         SP: {awayPitcher ?? 'TBD'} vs {homePitcher ?? 'TBD'}
